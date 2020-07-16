@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'listing.apps.ListingConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,3 +139,11 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS ={
     messages.ERROR: 'danger'
 }
+
+#email Config
+from .email_config import login_pair
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER=login_pair['username']
+EMAIL_HOST_PASSWORD=login_pair['password']
+EMAIL_USE_TLS=True
